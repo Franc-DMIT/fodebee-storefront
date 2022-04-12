@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head';
 import PageTitle from "../components/PageTitle/PageTitle"
 import ProductCard from '../components/ProductCard/ProductCard';
 
@@ -10,7 +11,14 @@ export default function Home(props) {
 
   return(
     <>
-      <PageTitle tagline="Product Specials" title="Storefront" />
+      <Head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fodebee Storefront</title>
+      </Head>
+
+      <PageTitle tagline="Product Specials" title="Fodebee Storefront" />
 
       <main>
         {products.map(product => <ProductCard key={product.uid} product={product} />)}
@@ -64,6 +72,7 @@ export async function getStaticProps() {
   return {
     props:{
       products
-    }
+    },
+    revalidate:60
   }
 }
