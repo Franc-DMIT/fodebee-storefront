@@ -15,11 +15,13 @@ function ProductCard ({children, product, ...props})  {
          <header>
 
            <image
+              loader={myLoader}
               src={imageUrl} 
               alt={productName} 
               width={418} 
               height={240}
               quality={50}
+              layout="intrinsic"
            />
 
          </header>
