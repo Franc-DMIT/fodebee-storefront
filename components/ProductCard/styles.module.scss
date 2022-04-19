@@ -1,20 +1,37 @@
- .productCard{
-      
-      
+.productCard {    
+      font-family: Arial, Helvetica, sans-serif; 
+      text-align: center;
       margin: 2rem auto 4rem;
+      padding: 4rem;
  
     footer{
         margin: 1rem 0;
     }
     button{
         border:none;
-        background-color: #3b82f6;
+        background-color: #2c2f33;
         color:#eff6ff;
         padding: 0.5rem 2rem;
         border-radius: 3px;
         font-size:1.25rem;
+        transition: transform .5s ease;
+    }
+    button:hover {
+        background-color: #7289da;
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+
+    .image {
+        transition: transform .5s;
+        filter: grayscale(50%);
+        overflow: hidden;
     }
     
+    .image:hover {
+        transform: scale(1.01);
+        filter: grayscale(0);
+    }
  }
 
  .price{
@@ -35,8 +52,7 @@
      font-weight: 800;
      color:#1e293b;
  }
-
-  
+ 
  @media (min-width:600px){
     .productCard{
         display:flex;
